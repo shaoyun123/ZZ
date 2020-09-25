@@ -83,18 +83,31 @@ export const constantRoutes = [
       }
     ]
   },
-  {
-    path: '/documentation',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/documentation/index'),
-        name: 'Documentation',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
-      }
-    ]
-  },
+  // {
+  //   path: '/',
+  //   component: Layout,
+  //   redirect: '/home',
+  //   children: [
+  //     {
+  //       path: 'home',
+  //       component: () => import('@/views/ZZHome/home'),
+  //       name: 'home',
+  //       meta: { title: 'home', icon: 'dashboard', affix: true }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/documentation',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       component: () => import('@/views/documentation/index'),
+  //       name: 'Documentation',
+  //       meta: { title: 'Documentation', icon: 'documentation', affix: true }
+  //     }
+  //   ]
+  // },
   {
     path: '/guide',
     component: Layout,
@@ -170,7 +183,126 @@ export const asyncRoutes = [
       }
     ]
   },
-
+  {
+    path: '/ZZHome',
+    component: Layout,
+    redirect: '/ZZHome/scan2',
+    name: 'ZZHome',
+    meta: {
+      title: '立项管理',
+      icon: 'el-icon-s-help'
+    },
+    children: [
+      {
+        path: 'add',
+        component: () => import('@/views/ZZHome/add'),
+        name: '立项新增',
+        meta: { title: '立项新增', icon: 'edit' }
+      },
+      {
+        path: 'scan2',
+        component: () => import('@/views/ZZHome/scan2'),
+        name: '立项查询',
+        meta: { title: '立项查询', icon: 'edit' }
+      },
+      {
+        path: 'GPS',
+        component: () => import('@/views/ZZHome/GPS'),
+        name: 'GPS',
+        meta: { title: 'GPS', icon: 'edit' }
+      }
+    ]
+  },
+  {
+    path: '/ZZKR',
+    component: Layout,
+    redirect: '/ZZKR/demo01',
+    name: 'ZZKR',
+    meta: {
+      title: '库融管理',
+      icon: 'el-icon-s-help'
+    },
+    children: [
+      {
+        path: 'demo01',
+        component: () => import('@/views/ZZKR/demo01'),
+        name: 'ZZKRdemo01',
+        meta: { title: 'demo01', icon: 'edit' }
+      },
+      {
+        path: 'demo02',
+        component: () => import('@/views/ZZKR/demo02'),
+        name: 'ZZKRdemo02',
+        meta: { title: 'demo02', icon: 'edit' }
+      },
+      {
+        path: 'demo03',
+        component: () => import('@/views/ZZKR/demo03'),
+        name: 'ZZKRdemo03',
+        meta: { title: 'demo03', icon: 'edit' }
+      }
+    ]
+  },
+  {
+    path: '/ZZFinance',
+    component: Layout,
+    redirect: '/ZZFinance/demo01',
+    name: 'ZZFinance',
+    meta: {
+      title: '财务管理',
+      icon: 'el-icon-s-help'
+    },
+    children: [
+      {
+        path: 'demo01',
+        component: () => import('@/views/ZZFinance/demo01'),
+        name: 'ZZFinancedemo01',
+        meta: { title: 'demo01', icon: 'edit' }
+      },
+      {
+        path: 'demo02',
+        component: () => import('@/views/ZZFinance/demo02'),
+        name: 'ZZFinancedemo02',
+        meta: { title: 'demo02', icon: 'edit' }
+      },
+      {
+        path: 'demo03',
+        component: () => import('@/views/ZZFinance/demo03'),
+        name: 'ZZFinancedemo03',
+        meta: { title: 'demo03', icon: 'edit' }
+      }
+    ]
+  },
+  {
+    path: '/ZZReport',
+    component: Layout,
+    redirect: '/ZZReport/demo01',
+    name: 'ZZReport',
+    meta: {
+      title: '报表管理',
+      icon: 'el-icon-s-help'
+    },
+    children: [
+      {
+        path: 'demo01',
+        component: () => import('@/views/ZZReport/demo01'),
+        name: 'ZZReportdemo01',
+        meta: { title: 'demo01', icon: 'edit' }
+      },
+      {
+        path: 'demo02',
+        component: () => import('@/views/ZZReport/demo02'),
+        name: 'ZZReportdemo02',
+        meta: { title: 'demo02', icon: 'edit' }
+      },
+      {
+        path: 'demo03',
+        component: () => import('@/views/ZZReport/demo03'),
+        name: 'ZZReportdemo03',
+        meta: { title: 'demo03', icon: 'edit' }
+      }
+    ]
+  },
   {
     path: '/icon',
     component: Layout,
@@ -380,126 +512,6 @@ export const asyncRoutes = [
         path: 'https://github.com/PanJiaChen/vue-element-admin',
         meta: { title: 'External Link', icon: 'link' }
       }
-    ]
-  },
-  {
-    path: '/ZZHome',
-    component: Layout,
-    redirect: '/ZZHome/add',
-    name: 'ZZHome',
-    meta: {
-      title: '立项管理',
-      icon: 'el-icon-s-help'
-    },
-    children: [
-      {
-        path: 'add',
-        component: () => import('@/views/ZZHome/add'),
-        name: '立项新增',
-        meta: { title: '立项新增', icon: 'edit' }
-      },
-      {
-        path: 'demo02',
-        component: () => import('@/views/ZZHome/demo02'),
-        name: 'demo02',
-        meta: { title: 'demo02', icon: 'edit' }
-      },
-     {
-       path: 'demo03',
-       component: () => import('@/views/ZZHome/demo03'),
-       name: 'demo03',
-       meta: { title: 'demo03', icon: 'edit' }
-     }
-    ]
-  }, 
-  {
-    path: '/ZZKR',
-    component: Layout,
-    redirect: '/ZZKR/demo01',
-    name: 'ZZKR',
-    meta: {
-      title: '库融管理',
-      icon: 'el-icon-s-help'
-    },
-    children: [
-      {
-        path: 'demo01',
-        component: () => import('@/views/ZZKR/demo01'),
-        name: 'demo01',
-        meta: { title: 'demo01', icon: 'edit' }
-      },
-      {
-        path: 'demo02',
-        component: () => import('@/views/ZZKR/demo02'),
-        name: 'demo02',
-        meta: { title: 'demo02', icon: 'edit' }
-      },
-     {
-       path: 'demo03',
-       component: () => import('@/views/ZZKR/demo03'),
-       name: 'demo03',
-       meta: { title: 'demo03', icon: 'edit' }
-     }
-    ]
-  },
-  {
-    path: '/ZZFinance',
-    component: Layout,
-    redirect: '/ZZFinance/demo01',
-    name: 'ZZFinance',
-    meta: {
-      title: '财务管理',
-      icon: 'el-icon-s-help'
-    },
-    children: [
-      {
-        path: 'demo01',
-        component: () => import('@/views/ZZFinance/demo01'),
-        name: 'demo01',
-        meta: { title: 'demo01', icon: 'edit' }
-      },
-      {
-        path: 'demo02',
-        component: () => import('@/views/ZZFinance/demo02'),
-        name: 'demo02',
-        meta: { title: 'demo02', icon: 'edit' }
-      },
-     {
-       path: 'demo03',
-       component: () => import('@/views/ZZFinance/demo03'),
-       name: 'demo03',
-       meta: { title: 'demo03', icon: 'edit' }
-     }
-    ]
-  },
-  {
-    path: '/ZZReport',
-    component: Layout,
-    redirect: '/ZZReport/demo01',
-    name: 'ZZReport',
-    meta: {
-      title: '报表管理',
-      icon: 'el-icon-s-help'
-    },
-    children: [
-      {
-        path: 'demo01',
-        component: () => import('@/views/ZZReport/demo01'),
-        name: 'demo01',
-        meta: { title: 'demo01', icon: 'edit' }
-      },
-      {
-        path: 'demo02',
-        component: () => import('@/views/ZZReport/demo02'),
-        name: 'demo02',
-        meta: { title: 'demo02', icon: 'edit' }
-      },
-     {
-       path: 'demo03',
-       component: () => import('@/views/ZZReport/demo03'),
-       name: 'demo03',
-       meta: { title: 'demo03', icon: 'edit' }
-     }
     ]
   },
 

@@ -140,6 +140,8 @@ export default {
   methods: {
     checkCapslock(e) {
       const { key } = e
+			// console.log(e);
+			// console.log(key);
       this.capsTooltip = key && key.length === 1 && (key >= 'A' && key <= 'Z')
     },
     showPwd() {
@@ -154,6 +156,7 @@ export default {
     },
     handleLogin() {
       this.$refs.loginForm.validate(valid => {
+		  // console.log(valid);
         if (valid) {
           this.loading = true
           this.$store.dispatch('user/login', this.loginForm)

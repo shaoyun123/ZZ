@@ -157,6 +157,7 @@ export default {
       this.dialogVisible = true
     },
     handleEdit(scope) {
+		console.log(scope)
       this.dialogType = 'edit'
       this.dialogVisible = true
       this.checkStrictly = true
